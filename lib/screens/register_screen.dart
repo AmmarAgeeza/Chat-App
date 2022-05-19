@@ -1,31 +1,40 @@
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
+  static String id2='RegisterScreen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
+        child: ListView(
           children: [
-            const Spacer(
-              flex: 2,
+            const SizedBox(
+              height: 100,
             ),
-            Image.asset('assets/images/scholar.png'),
-            const Text(
-              'Scholar Chat',
-              style: TextStyle(
-                  fontSize: 35, fontFamily: 'Pacifico', color: Colors.white),
+
+            Image.asset('assets/images/scholar.png',height: 100,),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: const [
+                 Text(
+                  'Scholar Chat',
+                  style: TextStyle(
+                      fontSize: 35, fontFamily: 'Pacifico', color: Colors.white),
             ),
-            const Spacer(
-              flex: 1,
+               ],
+             ),
+            const SizedBox(
+              height: 50,
             ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: const [
@@ -64,9 +73,6 @@ class RegisterScreen extends StatelessWidget {
                     },
                     child: const Text('LOGIN'))
               ],
-            ),
-            const Spacer(
-              flex: 2,
             ),
           ],
         ),

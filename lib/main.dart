@@ -15,10 +15,10 @@ class ChatApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        'login': (context) => const LoginScreen(),
-        'register': (context) => const RegisterScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        RegisterScreen.id2: (context) => const RegisterScreen(),
       },
-      initialRoute: 'login',
+      initialRoute: LoginScreen.id,
     );
   }
 }

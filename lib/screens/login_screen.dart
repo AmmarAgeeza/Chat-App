@@ -1,30 +1,36 @@
+import 'package:chat_app_thrwat/screens/register_screen.dart';
 import 'package:chat_app_thrwat/widgets/custom_button.dart';
 import 'package:chat_app_thrwat/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
+import '../constants.dart';
+
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
+  static String id = 'LoginScreen';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: kPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
+        child: ListView(
           children: [
-            const Spacer(
-              flex: 2,
+            const SizedBox(height: 100,),
+            Image.asset('assets/images/scholar.png',height: 100,),
+             Row(
+               mainAxisAlignment: MainAxisAlignment.center,
+               children: const [
+                 Text(
+                  'Scholar Chat',
+                  style: TextStyle(
+                      fontSize: 35, fontFamily: 'Pacifico', color: Colors.white),
             ),
-            Image.asset('assets/images/scholar.png'),
-            const Text(
-              'Scholar Chat',
-              style: TextStyle(
-                  fontSize: 35, fontFamily: 'Pacifico', color: Colors.white),
-            ),
-            const Spacer(
-              flex: 1,
-            ),
+               ],
+             ),
+            const SizedBox(height: 50,),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: const [
@@ -57,13 +63,12 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text('don\'t have account '),
-                TextButton(onPressed: () {
-                  Navigator.pushNamed(context, 'register');
-                }, child: const Text('Sign Up'))
+                TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, RegisterScreen.id2);
+                    },
+                    child: const Text('Sign Up'))
               ],
-            ),
-            const Spacer(
-              flex: 2,
             ),
           ],
         ),
