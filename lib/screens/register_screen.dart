@@ -1,9 +1,10 @@
-import 'package:chat_app_thrwat/widgets/custom_button.dart';
-import 'package:chat_app_thrwat/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+import '../widgets/custom_button.dart';
+import '../widgets/custom_text_field.dart';
+
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +30,7 @@ class LoginScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: const [
                 Text(
-                  'Login',
+                  'Register',
                   style: TextStyle(
                     fontSize: 20,
                   ),
@@ -48,7 +49,7 @@ class LoginScreen extends StatelessWidget {
               height: 15,
             ),
             CustomButton(
-              title: 'LOGIN',
+              title: 'REGISTER',
             ),
             const SizedBox(
               height: 15,
@@ -56,10 +57,12 @@ class LoginScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('don\'t have account '),
-                TextButton(onPressed: () {
-                  Navigator.pushNamed(context, 'register');
-                }, child: const Text('Sign Up'))
+                const Text('already have account '),
+                TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('LOGIN'))
               ],
             ),
             const Spacer(
