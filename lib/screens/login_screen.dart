@@ -65,7 +65,7 @@ class LoginScreen extends StatelessWidget {
                 const Text('don\'t have account '),
                 TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, RegisterScreen.id2);
+                      Navigator.pushNamed(context, RegisterScreen.id);
                     },
                     child: const Text('Sign Up'))
               ],

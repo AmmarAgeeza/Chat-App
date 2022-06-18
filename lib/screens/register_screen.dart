@@ -6,7 +6,7 @@ import '../widgets/custom_text_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({Key? key}) : super(key: key);
-  static String id2='RegisterScreen';
+  static String id='RegisterScreen';
 
   @override
   Widget build(BuildContext context) {
