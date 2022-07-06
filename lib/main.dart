@@ -1,9 +1,13 @@
+import 'package:chat_app_thrwat/screens/chat_screen.dart';
 import 'package:chat_app_thrwat/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'screens/register_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const ChatApp());
 }
 
@@ -17,6 +21,8 @@ class ChatApp extends StatelessWidget {
       routes: {
         LoginScreen.id: (context) => const LoginScreen(),
         RegisterScreen.id: (context) => const RegisterScreen(),
+        ChatPage.id: (context) => const ChatPage(),
+
       },
       initialRoute: LoginScreen.id,
     );
